@@ -24,3 +24,4 @@ yarn-error.log*
 
 .env
 
+fe/node_modules/
