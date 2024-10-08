@@ -1,0 +1,55 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px;
+}
+
+.controls {
+  margin: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 50px); 
+  grid-template-rows: repeat(4, 50px);    
+  gap: 2px; 
+  margin-top: 20px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: #ddd;
+}
+
+.cell.start {
+  background-color: #4caf50;
+}
+
+.cell.end {
+  background-color: #f44336;
+}
+
+.cell.path {
+  background-color: #2196f3;
+}
