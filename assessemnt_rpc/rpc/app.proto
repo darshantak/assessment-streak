@@ -1,12 +1,11 @@
 syntax = "proto3";
 
-option go_package = "/rpc"; // Change this to your actual module path
+option go_package = "/rpc"; 
 
 package rpc;
 
-// The greeting service definition.
 service User {
-  rpc LoginUser (LoginUserRequest) returns (LoginUserResponse) {} // Ensure this uses the correct request type
+  rpc LoginUser (LoginUserRequest) returns (LoginUserResponse) {} 
   rpc LogOutUser (LogoutUserRequest) returns (LogoutUserResponse) {}
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {}
 }
