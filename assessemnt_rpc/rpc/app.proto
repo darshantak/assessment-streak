@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "/rpc"; // Change this to your actual module path
+
+package rpc;
+
+// The greeting service definition.
+service User {
+  rpc LoginUser (LoginUserRequest) returns (LoginUserResponse) {} // Ensure this uses the correct request type
+  rpc LogOutUser (LogoutUserRequest) returns (LogoutUserResponse) {}
+  rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {}
+}
+
+message CreateUserRequest {
+  string username=1;
+  string password=2;
+}
+message CreateUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message LoginUserRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginUserResponse {
+  bool success = 1;
+  string message = 2;
+  string session_token = 3;
+}
+
+message LogoutUserRequest {
+  string session_token = 1;
+}
+message LogoutUserResponse {
+  bool success = 1;
+  string message = 2;
+}
