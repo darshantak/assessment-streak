@@ -33,9 +33,9 @@ func (s *userServiceServer) LoginUser(ctx context.Context, req *pb.LoginUserRequ
 	return &pb.LoginUserResponse{Success: true, Message: "Login successful", SessionToken: sessionToken}, nil
 }
 
-func (s *userServiceServer) LogoutUser(ctx context.Context, req *pb.LogoutUserRequest) (*pb.LogoutUserResponse, error) {
+func (s *userServiceServer) LogOutUser(ctx context.Context, req *pb.LogoutUserRequest) (*pb.LogoutUserResponse, error) {
 	if _, exists := s.sessionData[req.SessionToken]; !exists {
-		return &pb.LogoutUserResponse{Success: false, Message: "Invalid session token"}, nil
+		return &pb.LogoutUserResponse{Success: false, Message: "Session Expired"}, nil
 	}
 	delete(s.sessionData, req.SessionToken)
 	return &pb.LogoutUserResponse{Success: true, Message: "Logout successful"}, nil
